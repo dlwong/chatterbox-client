@@ -17,12 +17,20 @@ var App = {
 
   },
 
-  fetch: function(callback = ()=>{}) {
+  fetch: function(callback = (key)=>{
+    // take value at key
+    MessagesView.render(key);
+    // appends to div
+
+  }) {
     Parse.readAll((data) => {
       // examine the response from the server request:
-      console.log(data);
-
-      callback();
+      console.log(data.results[0]);
+      for (var i = 0; i < data.results.length; i++) {
+        // let text = key.text;
+        // $(this.$chats).append('<p>' + text + '</p>');
+        callback(data.results[i]);
+      }
     });
   },
 
