@@ -13,23 +13,18 @@ var App = {
 
     // Fetch initial batch of messages
     App.startSpinner();
-    App.fetch(App.stopSpinner);
+    App.stopSpinner();
+    App.fetch();
 
   },
 
-  fetch: function(callback = (key)=>{
-    // take value at key
-    MessagesView.render(key);
-    // appends to div
-
+  fetch: function(callback = (obj)=>{
+    MessagesView.render(obj)
   }) {
     Parse.readAll((data) => {
       // examine the response from the server request:
-      console.log(data.results[0]);
-      for (var i = 0; i < data.results.length; i++) {
-        // let text = key.text;
-        // $(this.$chats).append('<p>' + text + '</p>');
-        callback(data.results[i]);
+      for (var i = 0; i < data.results.length; i++) {  
+        callback(data.results[i])
       }
     });
   },
