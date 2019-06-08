@@ -17,8 +17,8 @@ var FormView = {
       username: App.username
     }
     
-    Parse.create(obj);
-    App.initialize();    
+    Parse.create(obj, App.fetch);
+    // App.fetch();    
   },
 
   setStatus: function(active) {

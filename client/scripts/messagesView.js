@@ -21,7 +21,6 @@ var MessagesView = {
     })
     
     var m = MessageView.render(message)
-    
     $(this.$chats).append(m);
   }
 
