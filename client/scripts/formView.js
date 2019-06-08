@@ -4,6 +4,7 @@ var FormView = {
 
   initialize: function() {
     FormView.$form.on('submit', FormView.handleSubmit);
+    RoomsView.$button.on('click', Rooms.add)
   },
 
   handleSubmit: function(event) {
@@ -17,8 +18,7 @@ var FormView = {
     }
     
     Parse.create(obj);
-    //MessagesView.render(event);
-    
+    App.initialize();    
   },
 
   setStatus: function(active) {
