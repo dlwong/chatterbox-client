@@ -3,18 +3,18 @@ var MessagesView = {
   $chats: $('#chats'),
   
   initialize: function() {
-    if (!message.username) {
-      message.username = ''
-    };
+    // if (!message.username) {
+    //   message.username = ''
+    // };
 
-    if (!message.text) {
-      message.text = ''
-    };
+    // if (!message.text) {
+    //   message.text = ''
+    // };
 
-    Parse.create(message); 
+    //Parse.create(message); 
 
-    var m = MessageView.render(message)
-    $(this.$chats).append(m);
+    // var m = MessageView.render(message)
+    // $(this.$chats).append(m);
   },
 
   render: function(message) {
@@ -26,7 +26,7 @@ var MessagesView = {
       message.text = ''
     };
 
-    Parse.create(message); 
+    //Parse.create(message); 
 
     var m = MessageView.render(message)
     $(this.$chats).append(m);

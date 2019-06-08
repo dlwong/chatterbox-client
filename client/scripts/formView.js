@@ -8,12 +8,16 @@ var FormView = {
 
   handleSubmit: function(event) {
     // Stop the browser from submitting the form
+    //console.log(event) //event is the jquery.Event
     event.preventDefault();
-    Parse.create(message); 
-
-    var message = $("#message").val();
-
-    MessagesView.render(message);
+    var txt = $("#message").val();
+    var obj = {
+      text: txt,
+      username: App.username
+    }
+    
+    Parse.create(obj);
+    //MessagesView.render(event);
     
   },
 
